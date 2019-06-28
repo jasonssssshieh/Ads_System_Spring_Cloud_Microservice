@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: Jason-Passbook
+  datasource:
+    url: jdbc:mysql://localhost:3306/passbook?autoReconnect=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: JasonJason
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: file:///Users/Jason/hbase-1.2.12/hbase_data/root_dir
+      nodeParent: /hbase
+  redis:
+      host: 127.0.0.1
+      port: 6379
+server:
+  port: 9528
+logging:
+  file: jason-passbook.log
+  level: debug
